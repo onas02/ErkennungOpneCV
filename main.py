@@ -3,7 +3,7 @@
 import cv2
 import numpy as np
 import tensorflow as tf
-
+#
 # Laden des trainierten Modells (hier verwenden wir MobileNetV2)
 model = tf.keras.applications.MobileNetV2(weights='imagenet', include_top=True)
 img = cv2.imread("Downloads\\example.jpg")
