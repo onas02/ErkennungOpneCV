@@ -31,7 +31,7 @@ def predict_image(image):
 def detect_objects(image_path):
     # Laden des Bildes
     image = cv2.imread(image_path)
-    cv2.imshow(image)
+    cv2.imshow("Bild", image)
     cv2.waitKey(0)
     
     # Umwandlung von BGR in RGB
@@ -45,5 +45,6 @@ def detect_objects(image_path):
 if __name__ == "__main__":
     # Beispielaufruf der Funktion zur Objekterkennung
     image_path = 'C:\\Users\\Hendrik\\Downloads\\Praktiukm_Java\\example.jpg'  # Passe den Dateipfad zu deinem Bild an
+
     prediction = detect_objects(image_path)
     print("Prediction:", prediction)
