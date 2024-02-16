@@ -16,6 +16,8 @@ with open(imagenet_classes) as f:
 def predict_image(image):
     # Größenänderung und Normalisierung des Bildes entsprechend den Anforderungen des Modells
     image = cv2.resize(image, (224, 224))
+    cv2.imshow("Bild", image)
+    cv2.waitKey(0)
     image = tf.keras.applications.mobilenet_v2.preprocess_input(image)
 
     # Vorhersage des Bildes
@@ -42,7 +44,8 @@ def detect_objects(image_path):
 
 if __name__ == "__main__":
     # Beispielaufruf der Funktion zur Objekterkennung
-    image_path = 'example.jpg'  # Passe den Dateipfad zu deinem Bild an
+    image_path_base = 'images\\'  # Passe den Dateipfad zu deinem Bild an
 
-    prediction = detect_objects(image_path)
-    print("Prediction:", prediction)
+    for i in range(1,6):  
+        prediction = detect_objects(image_path_base + str(i) + ".jpg")
+        print("Prediction:", prediction)
